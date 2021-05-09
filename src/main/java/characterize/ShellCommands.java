@@ -3,7 +3,7 @@ package characterize;
 public class ShellCommands {
 
     public static void help() {
-//        System.out.println(Main.translation.getString("help"));
+//        System.out.println(Translation.getString("help"));
         final String help = """
                 Available commands:
 
@@ -14,10 +14,10 @@ public class ShellCommands {
     }
 
     public static void about() {
-        System.out.println(Main.translation.getString("about"));
+        System.out.println(Translation.getString("about"));
     }
 
     public static void unknown() {
-        System.out.println(Main.translation.getString("unknown"));
+        System.out.println(Translation.getString("unknown"));
     }
 }

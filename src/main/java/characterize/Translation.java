@@ -9,14 +9,14 @@ public class Translation {
     public Translation(String[] args) {
         String country;
         String language;
-        if (args.length != 2) {
+        if (args.length != 1) {
             language = "en";
             country = "US";
         } else {
             language = args[0];
             country = args[1];
         }
-        Locale currentLocale = new Locale(language, country);
+        Locale currentLocale = new Locale(language);
         messages = ResourceBundle.getBundle("locales", currentLocale);
     }
 

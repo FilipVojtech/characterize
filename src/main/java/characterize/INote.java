@@ -1,7 +1,5 @@
 package characterize;
 
-public interface INote {
-    // Add note
-    // Delete note
-    // Edit note
+public interface INote extends IAddable {
+    String text = "";
 }

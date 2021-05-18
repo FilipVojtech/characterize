@@ -1,5 +1,5 @@
 package characterize;
 
-public interface ICharacter {
+public interface ICharacter extends IAddable {
     void addNickname(String nickname);
 }

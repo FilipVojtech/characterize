@@ -1,6 +1,17 @@
 package characterize;
 
 public class Note implements INote {
-    String text = null;
+    @Override
+    public void add() {
+    }
 
+    @Override
+    public void remove() {
+
+    }
+
+    @Override
+    public void edit() {
+
+    }
 }

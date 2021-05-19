@@ -55,7 +55,7 @@ public class User {
         return loggedIn;
     }
 
-    public void logOot() {
+    public void logOut() {
         loggedIn = false;
     }
 }

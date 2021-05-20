@@ -16,5 +16,6 @@ public enum MBTITypes {
     ISTP,
     ISFP,
     ESTP,
-    ESFP
+    ESFP,
+    Unknown
 }

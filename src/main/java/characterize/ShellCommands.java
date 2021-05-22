@@ -2,6 +2,9 @@ package characterize;
 
 public class ShellCommands {
 
+    /**
+     * Print help command based on login status
+     */
     public static void help() {
         StringBuilder helpCommand = new StringBuilder();
 

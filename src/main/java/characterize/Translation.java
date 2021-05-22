@@ -6,6 +6,11 @@ import java.util.ResourceBundle;
 public class Translation {
     private final ResourceBundle messages;
 
+    /**
+     * Fetch the localization file
+     *
+     * @param args Program arguments at startup
+     */
     public Translation(String[] args) {
         String language;
         if (args.length != 1) {

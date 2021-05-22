@@ -14,6 +14,10 @@ public class User {
 
     }
 
+    /**
+     * Ask user their login details, fetch data and log them in
+     * Wrong details won't return a document so we will print an error message else log in
+     */
     public void login() {
         String email = HSConsoleInput.getString(Translation.get("email"), true);
 //            char[] password = System.console().readPassword();
@@ -41,11 +45,17 @@ public class User {
         }
     }
 
+    /**
+     * Nullify user details resulting in log out
+     */
     public void logout() {
         this.email = null;
         this.loggedIn = false;
     }
 
+    /**
+     * @return login status
+     */
     public boolean isLoggedIn() {
         return loggedIn;
     }

@@ -5,14 +5,9 @@ import cz.polygonunicorn.javahandysnippets.HSConsoleInput;
 import mongodb.Mongo;
 import org.bson.Document;
 
-import java.util.Arrays;
-
 public class User {
     private String email = null;
     private boolean loggedIn = false;
-
-    public User() {
-    }
 
     public void register() {
         System.out.println("Register thingy");
@@ -20,9 +15,9 @@ public class User {
     }
 
     public void login() {
-        String email = HSConsoleInput.getString(Translation.getString("email"), true);
+        String email = HSConsoleInput.getString(Translation.get("email"), true);
 //            char[] password = System.console().readPassword();
-        String password = HSConsoleInput.getString(Translation.getString("password"), true);
+        String password = HSConsoleInput.getString(Translation.get("password"), true);
 
         Document query = new Document("email", new Document("$eq", email));
 //        query.append("password", new Document("$eq", Arrays.toString(password)));
@@ -32,7 +27,7 @@ public class User {
         try {
             users = Mongo.getCollection("users");
         } catch (ExceptionInInitializerError e) {
-            System.out.println(Translation.getString("error_connection"));
+            Translation.print("error_connection");
             return;
         }
 
@@ -42,7 +37,7 @@ public class User {
             this.email = document.getString("email");
             this.loggedIn = true;
         } else {
-            System.out.println(Translation.getString("wrongLogin"));
+            Translation.print("wrong_login");
         }
     }
 
@@ -53,9 +48,5 @@ public class User {
 
     public boolean isLoggedIn() {
         return loggedIn;
-    }
-
-    public void logOut() {
-        loggedIn = false;
     }
 }

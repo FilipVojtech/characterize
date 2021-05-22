@@ -4,27 +4,27 @@ import cz.polygonunicorn.javahandysnippets.HSConsoleInput;
 
 public class Main {
     public static Translation translation;
-    public static User user;
+    private static User user;
 
     public static void main(String[] args) {
         translation = new Translation(args);
         user = new User();
 
-        System.out.println(Translation.getString("welcomeTo") + Translation.getString("app.name"));
+        System.out.println(Translation.get("welcome_to") + Translation.get("app.name"));
         while (true) {
             String input = HSConsoleInput.getString("> ", false);
 
             while (user.isLoggedIn()) {
+                input = HSConsoleInput.getString("> ", false);
                 char firstChar = input.toCharArray()[0];
 
                 if ("!@#".indexOf(firstChar) == -1) {
                     switch (input) {
                         case "logout" -> user.logout();
                         // General commands
-                        case "about" -> ShellCommands.about();
                         case "help", "h" -> ShellCommands.help();
                         case "exit" -> System.exit(0);
-                        default -> ShellCommands.unknown();
+                        default -> Translation.print("unknown");
                     }
                 } else {
                     input = input.substring(1);
@@ -39,13 +39,22 @@ public class Main {
             switch (input) {
                 case "login", "l" -> user.login();
                 case "register", "r" -> user.register();
+                case "create" -> Campaign.create();
                 // General commands
-                case "about" -> ShellCommands.about();
                 case "help", "h" -> ShellCommands.help();
                 case "exit" -> System.exit(0);
-                default -> ShellCommands.unknown();
+                default -> Translation.print("unknown");
             }
             System.out.println();
         }
+    }
+
+    /**
+     * Getter for user variable
+     *
+     * @return initialized user
+     */
+    public static User getUser() {
+        return user;
     }
 }

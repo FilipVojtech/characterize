@@ -22,7 +22,7 @@ public class Translation {
      *
      * @param key key of the localized string in .properties file
      */
-    public static void printString(String key) {
+    public static void print(String key) {
         System.out.println(Main.translation.messages.getString(key));
     }
 
@@ -32,7 +32,7 @@ public class Translation {
      * @param key key of the localized string in .properties file
      * @return Value of the specified key
      */
-    public static String getString(String key) {
+    public static String get(String key) {
         return Main.translation.messages.getString(key);
     }
 }

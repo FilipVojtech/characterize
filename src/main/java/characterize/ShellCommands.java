@@ -5,7 +5,7 @@ public class ShellCommands {
     public static void help() {
         StringBuilder helpCommand = new StringBuilder();
 
-        final String helpGenericStart = Translation.getString("availableCommands") + "\n\n";
+        final String helpGenericStart = Translation.get("available_commands") + "\n\n";
         final String helpGenericEnd = """
                   about   About this program
                 \sh help   Display this page
@@ -18,18 +18,10 @@ public class ShellCommands {
 
         helpCommand.append(helpGenericStart);
 
-        if (Main.user.isLoggedIn()) helpCommand.append(helpLoggedIn);
+        if (Main.getUser().isLoggedIn()) helpCommand.append(helpLoggedIn);
         else helpCommand.append(helpLoggedOut);
 
         helpCommand.append(helpGenericEnd);
         System.out.println(helpCommand);
-    }
-
-    public static void about() {
-        System.out.println(Translation.getString("about"));
-    }
-
-    public static void unknown() {
-        System.out.println(Translation.getString("unknown"));
     }
 }

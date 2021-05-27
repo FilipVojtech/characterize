@@ -11,7 +11,7 @@ public class Character {
     private String name = null; // Required
     private String middleName = null;
     private String surname = null;
-    private MBTITypes mbti = null;
+    private MbtiTypes mbti = null;
     private Alignment alignment = null; // Required
     private boolean deceased = false;
     private Date born = null;

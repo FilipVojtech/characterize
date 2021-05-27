@@ -1,6 +1,6 @@
 package characterize;
 
-public enum MBTITypes {
+public enum MbtiTypes {
     INTJ,
     INTP,
     ENTJ,

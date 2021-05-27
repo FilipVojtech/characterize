@@ -39,7 +39,8 @@ public class Main {
             switch (input) {
                 case "login", "l" -> user.login();
                 case "register", "r" -> user.register();
-                case "create" -> Campaign.create();
+//                case "create" -> Campaign.create();
+//                case "setup" -> Campaign.setUpCampaign();
                 // General commands
                 case "help", "h" -> ShellCommands.help();
                 case "exit" -> System.exit(0);

@@ -40,8 +40,9 @@ public class User {
         if (document != null) {
             this.email = document.getString("email");
             this.loggedIn = true;
+            Translation.print("login.correct");
         } else {
-            Translation.print("wrong_login");
+            Translation.print("login.wrong");
         }
     }
 

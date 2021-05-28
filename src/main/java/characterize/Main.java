@@ -30,7 +30,7 @@ public class Main {
                     input = input.substring(1);
                     switch (firstChar) {
                         case '!' -> System.out.println("Quest " + input);
-                        case '@' -> System.out.println("Character " + input);
+                        case '@' -> Character.command(input);
                         case '#' -> System.out.println("Note " + input);
                     }
                 }

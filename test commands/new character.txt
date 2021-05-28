@@ -1,0 +1,1 @@
+@add "Charname CharMiddle1 CharMiddle2 CharMiddle3 Charsurname" "ENTJ" "Chaotic Neutral"

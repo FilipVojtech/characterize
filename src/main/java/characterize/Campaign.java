@@ -26,14 +26,14 @@ public class Campaign {
      */
     public static void create() {
         char[][] keys;
-        Translation.print("create.all.start");
+        Translation.println("create.all.start");
         showChecklist("account");
-        Translation.print("create.all.doing_great");
+        Translation.println("create.all.doing_great");
         System.out.println();
-        Translation.print("create.all.api");
+        Translation.println("create.all.api");
         keys = showApiChecklist();
         System.out.println();
-        Translation.print("create.all.end");
+        Translation.println("create.all.end");
         setUpCampaign(keys);
     }
 
@@ -67,11 +67,11 @@ public class Campaign {
         while (true) {
             System.out.print(i + ". ");
             try {
-                Translation.print("create." + type + ".ch" + i);
+                Translation.println("create." + type + ".ch" + i);
             } catch (MissingResourceException ignore) {
                 break;
             }
-            Translation.print("continue_key");
+            Translation.println("continue_key");
             new Scanner(System.in).nextLine();
             i++;
         }
@@ -79,9 +79,9 @@ public class Campaign {
 
     private static char[][] askApiKeys() {
         char[][] keys = new char[2][];
-        Translation.print("create.api.paste_public");
+        Translation.println("create.api.paste_public");
         keys[0] = HSConsoleInput.getString().toCharArray();
-        Translation.print("create.api.paste_private");
+        Translation.println("create.api.paste_private");
         keys[1] = HSConsoleInput.getString().toCharArray();
         return keys;
     }
@@ -94,7 +94,7 @@ public class Campaign {
         while (true) {
             System.out.print(i + ". ");
             try {
-                Translation.print("create.api.ch" + i);
+                Translation.println("create.api.ch" + i);
             } catch (MissingResourceException ignore) {
                 return keys;
             }
@@ -102,7 +102,7 @@ public class Campaign {
             if (i == 6) {
                 keys = askApiKeys();
             } else {
-                Translation.print("continue_key");
+                Translation.println("continue_key");
                 new Scanner(System.in).nextLine();
             }
             i++;

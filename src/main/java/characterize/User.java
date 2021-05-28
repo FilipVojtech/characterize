@@ -31,7 +31,7 @@ public class User {
         try {
             users = Mongo.getCollection("users");
         } catch (ExceptionInInitializerError e) {
-            Translation.print("error_connection");
+            Translation.println("error_connection");
             return;
         }
 
@@ -40,9 +40,9 @@ public class User {
         if (document != null) {
             this.email = document.getString("email");
             this.loggedIn = true;
-            Translation.print("login.correct");
+            Translation.println("login.correct");
         } else {
-            Translation.print("login.wrong");
+            Translation.println("login.wrong");
         }
     }
 

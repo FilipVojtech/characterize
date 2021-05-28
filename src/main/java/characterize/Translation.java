@@ -27,7 +27,7 @@ public class Translation {
      *
      * @param key key of the localized string in .properties file
      */
-    public static void print(String key) {
+    public static void println(String key) {
         System.out.println(Main.translation.messages.getString(key));
     }
 

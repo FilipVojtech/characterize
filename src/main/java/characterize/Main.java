@@ -25,7 +25,7 @@ public class Main {
                         // General commands
                         case "help", "h" -> ShellCommands.help();
                         case "exit" -> System.exit(0);
-                        default -> Translation.print("unknown");
+                        default -> Translation.println("unknown");
                     }
                 } else {
                     input = input.substring(1);
@@ -46,7 +46,7 @@ public class Main {
                 // General commands
                 case "help", "h" -> ShellCommands.help();
                 case "exit" -> System.exit(0);
-                default -> Translation.print("unknown");
+                default -> Translation.println("unknown");
             }
             System.out.println();
         }

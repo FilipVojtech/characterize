@@ -12,11 +12,12 @@ public class Main {
 
         System.out.println(Translation.get("welcome_to") + Translation.get("app.name"));
         while (true) {
-            String input = HSConsoleInput.getString("> ", false);
+            String input = null;
 
             while (user.isLoggedIn()) {
                 input = HSConsoleInput.getString("> ", false);
-                char firstChar = input.toCharArray()[0];
+                char firstChar = 0;
+                if (input.length() > 0) firstChar = input.toCharArray()[0];
 
                 if ("!@#".indexOf(firstChar) == -1) {
                     switch (input) {
@@ -36,6 +37,7 @@ public class Main {
                 }
                 System.out.println();
             }
+            input = HSConsoleInput.getString("> ", false);
             switch (input) {
                 case "login", "l" -> user.login();
                 case "register", "r" -> user.register();
